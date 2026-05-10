@@ -8,26 +8,31 @@ Page({
     hotThemes: [
       {
         name: '劳动节',
+        image: '/assets/topic-labor.png',
         coverClass: 'cover-labor',
         figureClass: 'figure-kids'
       },
       {
         name: '世界地球日',
+        image: '/assets/topic-earth.png',
         coverClass: 'cover-earth',
         figureClass: 'figure-earth'
       },
       {
         name: '端午节',
+        image: '/assets/topic-dragon.png',
         coverClass: 'cover-dragon',
         figureClass: 'figure-dragon'
       },
       {
         name: '中国航天日',
+        image: '/assets/topic-space.png',
         coverClass: 'cover-space',
         figureClass: 'figure-rocket'
       },
       {
         name: '阅读小报',
+        image: '/assets/topic-reading.png',
         coverClass: 'cover-reading',
         figureClass: 'figure-reading'
       }

@@ -1,11 +1,9 @@
 <view class="home-page">
   <view class="hero">
+    <image class="hero-visual" src="/assets/hero-family.png" mode="aspectFill" />
+
     <view class="brand">
-      <view class="deer-logo">
-        <text class="antler antler-left">⌞</text>
-        <text class="antler antler-right">⌟</text>
-        <text class="deer-face">🦌</text>
-      </view>
+      <image class="brand-logo" src="/assets/logo-deer.png" mode="aspectFit" />
       <view>
         <view class="brand-title">灵鹿手抄报</view>
         <view class="brand-en">LINGLU HANDWRITING POSTER</view>
@@ -16,44 +14,6 @@
       <view class="hero-title">10秒生成</view>
       <view class="hero-title second-line">孩子<text>爱画</text>的手抄报</view>
       <view class="hero-subtitle">家长轻松 · 孩子喜欢 · 老师放心</view>
-    </view>
-
-    <view class="room-light"></view>
-    <view class="family-scene">
-      <view class="adult adult-dad">
-        <view class="hair"></view>
-        <view class="face">
-          <view class="eye left-eye"></view>
-          <view class="eye right-eye"></view>
-          <view class="smile"></view>
-        </view>
-        <view class="body"></view>
-        <view class="book"></view>
-      </view>
-      <view class="adult adult-mom">
-        <view class="hair bun"></view>
-        <view class="face">
-          <view class="eye left-eye"></view>
-          <view class="eye right-eye"></view>
-          <view class="smile"></view>
-        </view>
-        <view class="body"></view>
-      </view>
-      <view class="child">
-        <view class="child-hair"></view>
-        <view class="face">
-          <view class="eye left-eye"></view>
-          <view class="eye right-eye"></view>
-          <view class="smile"></view>
-        </view>
-        <view class="child-body"></view>
-      </view>
-      <view class="desk">
-        <view class="paper paper-main"></view>
-        <view class="pencil pencil-one"></view>
-        <view class="pencil pencil-two"></view>
-        <view class="pencil pencil-three"></view>
-      </view>
     </view>
   </view>
 
@@ -119,11 +79,8 @@
             data-theme="{{item.name}}"
             bindtap="selectHotTheme"
           >
-            <view class="topic-cover {{item.coverClass}}">
-              <view class="sun"></view>
-              <view class="cloud cloud-one"></view>
-              <view class="cloud cloud-two"></view>
-              <view class="cover-figure {{item.figureClass}}"></view>
+            <view class="topic-cover">
+              <image class="topic-image" src="{{item.image}}" mode="aspectFill" />
             </view>
             <view class="topic-name">{{item.name}}</view>
           </button>
