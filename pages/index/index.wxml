@@ -1,0 +1,110 @@
+<view class="home-page">
+  <view class="hero">
+    <image class="hero-visual" src="/assets/hero-family.png" mode="aspectFill" />
+
+    <view class="brand">
+      <image class="brand-logo" src="/assets/logo-deer.png" mode="aspectFit" />
+      <view>
+        <view class="brand-title">灵鹿手抄报</view>
+        <view class="brand-en">LINGLU HANDWRITING POSTER</view>
+      </view>
+    </view>
+
+    <view class="hero-copy">
+      <view class="hero-title">10秒生成</view>
+      <view class="hero-title second-line">孩子<text>爱画</text>的手抄报</view>
+      <view class="hero-subtitle">家长轻松 · 孩子喜欢 · 老师放心</view>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="search-box">
+      <text class="magic-icon">✦</text>
+      <input
+        class="theme-input"
+        value="{{theme}}"
+        placeholder="输入主题，例如：劳动节、阅读小报..."
+        placeholder-class="theme-placeholder"
+        confirm-type="done"
+        bindinput="onThemeInput"
+      />
+      <button class="generate-button" bindtap="handleGenerate">立即生成</button>
+    </view>
+
+    <view class="selector-row">
+      <picker class="selector-picker" mode="selector" range="{{grades}}" bindchange="onGradeChange">
+        <view class="selector-card">
+          <view class="selector-icon graduation-icon"></view>
+          <view class="selector-copy">
+            <view class="selector-title">选择年级</view>
+            <view class="selector-value {{selectedGrade ? 'selected' : ''}}">
+              <text wx:if="{{selectedGrade}}">{{selectedGrade}}</text>
+              <text wx:else>请选择年级</text>
+            </view>
+          </view>
+          <text class="chevron">⌄</text>
+        </view>
+      </picker>
+
+      <picker class="selector-picker" mode="selector" range="{{styles}}" bindchange="onStyleChange">
+        <view class="selector-card">
+          <view class="selector-icon palette-icon"></view>
+          <view class="selector-copy">
+            <view class="selector-title">选择风格</view>
+            <view class="selector-value {{selectedStyle ? 'selected' : ''}}">
+              <text wx:if="{{selectedStyle}}">{{selectedStyle}}</text>
+              <text wx:else>请选择风格</text>
+            </view>
+          </view>
+          <text class="chevron">⌄</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="hot-section">
+      <view class="hot-header">
+        <view class="hot-title">
+          <text class="fire-icon">🔥</text>
+          <text>热门主题</text>
+        </view>
+        <view class="more-link">更多主题 <text>›</text></view>
+      </view>
+
+      <scroll-view class="topic-scroll" scroll-x="true" show-scrollbar="false">
+        <view class="topic-track">
+          <button
+            wx:for="{{hotThemes}}"
+            wx:key="name"
+            class="topic-card"
+            data-theme="{{item.name}}"
+            bindtap="selectHotTheme"
+          >
+            <view class="topic-cover">
+              <image class="topic-image" src="{{item.image}}" mode="aspectFill" />
+            </view>
+            <view class="topic-name">{{item.name}}</view>
+          </button>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="tabbar">
+    <view class="tab-item active">
+      <view class="tab-icon home-icon"></view>
+      <view>首页</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-icon folder-icon"></view>
+      <view>作品</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-icon template-icon"></view>
+      <view>模板</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-icon smile-icon"></view>
+      <view>我的</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+{
+  "description": "灵鹿AI手抄报微信小程序",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "appid": "touristappid",
+  "projectname": "linglu-ai-shouchaobao",
+  "condition": {}
+}

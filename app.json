@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "灵鹿AI手抄报",
+    "navigationBarBackgroundColor": "#FFF4DF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF8EC",
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
