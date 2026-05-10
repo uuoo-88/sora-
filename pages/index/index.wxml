@@ -15,11 +15,11 @@
     <view class="hero-title">10秒生成孩子爱画的手抄报</view>
     <view class="hero-illustration">
       <view class="scene-row">
-        <view class="scene-person parent">
+        <view class="scene-person">
           <text class="scene-emoji">📚</text>
           <text class="scene-label">父母轻松看书</text>
         </view>
-        <view class="scene-person child">
+        <view class="scene-person">
           <text class="scene-emoji">🎨</text>
           <text class="scene-label">孩子开心画画</text>
         </view>
@@ -71,25 +71,6 @@
         </view>
       </view>
     </scroll-view>
-  </view>
-
-  <view class="tabbar">
-    <view class="tab-item tab-active">
-      <text class="tab-icon">🏠</text>
-      <text class="tab-text">首页</text>
-    </view>
-    <view class="tab-item">
-      <text class="tab-icon">🖼️</text>
-      <text class="tab-text">作品</text>
-    </view>
-    <view class="tab-item">
-      <text class="tab-icon">📄</text>
-      <text class="tab-text">模板</text>
-    </view>
-    <view class="tab-item">
-      <text class="tab-icon">👤</text>
-      <text class="tab-text">我的</text>
-    </view>
   </view>
 
   <view class="mask" wx:if="{{showGradePicker}}" bindtap="closeGradePicker">

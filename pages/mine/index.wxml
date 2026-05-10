@@ -1,0 +1,6 @@
+<view class="page">
+  <view class="card">
+    <view class="title">我的</view>
+    <view class="desc">账户信息、生成记录和偏好设置会在这里展示。</view>
+  </view>
+</view>

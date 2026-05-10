@@ -1,7 +1,7 @@
 .page {
   min-height: 100vh;
   background: linear-gradient(180deg, #fffaf3 0%, #fff4e8 100%);
-  padding: 0 24rpx 180rpx;
+  padding: 0 24rpx 24rpx;
   box-sizing: border-box;
   color: #4a3c34;
 }
@@ -20,7 +20,6 @@
 
 .brand-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -185,44 +184,6 @@
   background: #fff3df;
   color: #734f36;
   font-size: 25rpx;
-}
-
-.tabbar {
-  position: fixed;
-  left: 24rpx;
-  right: 24rpx;
-  bottom: 20rpx;
-  height: 108rpx;
-  background: rgba(255, 253, 248, 0.96);
-  border-radius: 28rpx;
-  box-shadow: 0 10rpx 30rpx rgba(170, 130, 87, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  backdrop-filter: blur(8rpx);
-}
-
-.tab-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #9c846f;
-}
-
-.tab-icon {
-  font-size: 30rpx;
-  line-height: 1;
-}
-
-.tab-text {
-  margin-top: 8rpx;
-  font-size: 22rpx;
-}
-
-.tab-active {
-  color: #ef7f2a;
-  font-weight: 700;
 }
 
 .mask {
