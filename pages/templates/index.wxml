@@ -1,0 +1,6 @@
+<view class="page">
+  <view class="card">
+    <view class="title">模板中心</view>
+    <view class="desc">这里会展示不同主题和风格的手抄报模板。</view>
+  </view>
+</view>
