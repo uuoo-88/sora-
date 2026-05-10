@@ -1,0 +1,126 @@
+<view class="page">
+  <view class="safe-top"></view>
+
+  <view class="brand-card card">
+    <view class="brand-left">
+      <view class="logo">灵鹿</view>
+      <view>
+        <view class="brand-cn">灵鹿手抄报</view>
+        <view class="brand-en">LINGLU HANDCOPY STUDIO</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="hero-card card">
+    <view class="hero-title">10秒生成孩子爱画的手抄报</view>
+    <view class="hero-illustration">
+      <view class="scene-row">
+        <view class="scene-person parent">
+          <text class="scene-emoji">📚</text>
+          <text class="scene-label">父母轻松看书</text>
+        </view>
+        <view class="scene-person child">
+          <text class="scene-emoji">🎨</text>
+          <text class="scene-label">孩子开心画画</text>
+        </view>
+      </view>
+      <view class="scene-home">温馨家庭场景 · 欧美插画感</view>
+    </view>
+  </view>
+
+  <view class="form-card card">
+    <input
+      class="topic-input"
+      type="text"
+      value="{{topic}}"
+      placeholder="请输入主题，例如：劳动节、阅读小报"
+      bindinput="onTopicInput"
+      maxlength="30"
+    />
+
+    <view class="pickers-row">
+      <view class="picker-trigger" bindtap="openGradePicker">
+        <text class="picker-label">年级</text>
+        <text class="picker-value {{selectedGrade ? 'active' : ''}}">
+          {{selectedGrade || '请选择'}}
+        </text>
+      </view>
+      <view class="picker-trigger" bindtap="openStylePicker">
+        <text class="picker-label">风格</text>
+        <text class="picker-value {{selectedStyle ? 'active' : ''}}">
+          {{selectedStyle || '请选择'}}
+        </text>
+      </view>
+    </view>
+
+    <button class="generate-btn" bindtap="onGenerate">立即生成</button>
+  </view>
+
+  <view class="hot-card card">
+    <view class="section-title">热门主题</view>
+    <scroll-view class="hot-scroll" scroll-x="true" enhanced="true" show-scrollbar="false">
+      <view class="hot-list">
+        <view
+          class="hot-item"
+          wx:for="{{hotTopics}}"
+          wx:key="*this"
+          data-topic="{{item}}"
+          bindtap="onHotTopicTap"
+        >
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="tabbar">
+    <view class="tab-item tab-active">
+      <text class="tab-icon">🏠</text>
+      <text class="tab-text">首页</text>
+    </view>
+    <view class="tab-item">
+      <text class="tab-icon">🖼️</text>
+      <text class="tab-text">作品</text>
+    </view>
+    <view class="tab-item">
+      <text class="tab-icon">📄</text>
+      <text class="tab-text">模板</text>
+    </view>
+    <view class="tab-item">
+      <text class="tab-icon">👤</text>
+      <text class="tab-text">我的</text>
+    </view>
+  </view>
+
+  <view class="mask" wx:if="{{showGradePicker}}" bindtap="closeGradePicker">
+    <view class="popup" catchtap="noop">
+      <view class="popup-title">选择年级</view>
+      <view
+        class="popup-option"
+        wx:for="{{gradeOptions}}"
+        wx:key="*this"
+        data-value="{{item}}"
+        bindtap="selectGrade"
+      >
+        {{item}}
+      </view>
+      <view class="popup-cancel" bindtap="closeGradePicker">取消</view>
+    </view>
+  </view>
+
+  <view class="mask" wx:if="{{showStylePicker}}" bindtap="closeStylePicker">
+    <view class="popup" catchtap="noop">
+      <view class="popup-title">选择风格</view>
+      <view
+        class="popup-option"
+        wx:for="{{styleOptions}}"
+        wx:key="*this"
+        data-value="{{item}}"
+        bindtap="selectStyle"
+      >
+        {{item}}
+      </view>
+      <view class="popup-cancel" bindtap="closeStylePicker">取消</view>
+    </view>
+  </view>
+</view>
