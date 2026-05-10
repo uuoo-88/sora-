@@ -1,0 +1,95 @@
+<view class="home-page">
+  <view class="hero-card">
+    <view class="brand-row">
+      <view class="brand-mark">鹿</view>
+      <view>
+        <view class="brand-name">灵鹿AI手抄报</view>
+        <view class="brand-desc">给幼儿园和小学家长的打印小帮手</view>
+      </view>
+    </view>
+
+    <view class="hero-title">10秒生成儿童手抄报</view>
+    <view class="hero-subtitle">输入主题、选择年级和风格，快速得到适合孩子的手抄报模板。</view>
+
+    <view class="quick-tags">
+      <text class="quick-tag">儿童感排版</text>
+      <text class="quick-tag">A4打印友好</text>
+      <text class="quick-tag">家长省心</text>
+    </view>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">想做什么主题？</view>
+    <view class="input-wrap">
+      <input
+        class="theme-input"
+        value="{{theme}}"
+        placeholder="请输入主题，例如：劳动节、安全教育、阅读小报"
+        placeholder-class="theme-placeholder"
+        confirm-type="done"
+        bindinput="onThemeInput"
+      />
+    </view>
+
+    <view class="field-group">
+      <view class="field-label">年级选择</view>
+      <view class="option-grid grade-grid">
+        <button
+          wx:for="{{grades}}"
+          wx:key="*this"
+          class="option-pill {{selectedGrade == item ? 'option-pill-active' : ''}}"
+          data-grade="{{item}}"
+          bindtap="selectGrade"
+        >
+          {{item}}
+        </button>
+      </view>
+    </view>
+
+    <view class="field-group">
+      <view class="field-label">风格选择</view>
+      <view class="option-grid style-grid">
+        <button
+          wx:for="{{styles}}"
+          wx:key="*this"
+          class="option-pill style-pill {{selectedStyle == item ? 'option-pill-active' : ''}}"
+          data-style="{{item}}"
+          bindtap="selectStyle"
+        >
+          {{item}}
+        </button>
+      </view>
+    </view>
+
+    <button class="generate-button" bindtap="handleGenerate">
+      立即生成
+    </button>
+
+    <view class="print-tip">
+      <text class="print-icon">✓</text>
+      <text>生成后可保存图片，直接按 A4 打印。</text>
+    </view>
+  </view>
+
+  <view class="hot-card">
+    <view class="hot-header">
+      <view>
+        <view class="section-title">热门主题推荐</view>
+        <view class="hot-subtitle">点一下就能填入主题</view>
+      </view>
+      <view class="hot-badge">家长常用</view>
+    </view>
+
+    <view class="hot-list">
+      <button
+        wx:for="{{hotThemes}}"
+        wx:key="*this"
+        class="hot-chip"
+        data-theme="{{item}}"
+        bindtap="selectHotTheme"
+      >
+        {{item}}
+      </button>
+    </view>
+  </view>
+</view>

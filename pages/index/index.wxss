@@ -1,0 +1,262 @@
+.home-page {
+  min-height: 100vh;
+  padding: 32rpx 28rpx 56rpx;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 217, 149, 0.55) 0, rgba(255, 217, 149, 0) 260rpx),
+    linear-gradient(180deg, #fff1d5 0%, #fff9ef 42%, #fff6ea 100%);
+}
+
+.hero-card,
+.form-card,
+.hot-card {
+  border: 3rpx solid rgba(141, 92, 48, 0.08);
+  border-radius: 36rpx;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18rpx 42rpx rgba(178, 112, 42, 0.12);
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: 34rpx 32rpx 38rpx;
+}
+
+.hero-card::after {
+  position: absolute;
+  top: 28rpx;
+  right: -30rpx;
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 48% 52% 45% 55%;
+  background: rgba(255, 211, 111, 0.35);
+  content: "";
+}
+
+.brand-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.brand-mark {
+  display: flex;
+  width: 76rpx;
+  height: 76rpx;
+  margin-right: 18rpx;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28rpx;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f39c45 0%, #ffbe55 100%);
+  box-shadow: 0 10rpx 22rpx rgba(218, 126, 40, 0.22);
+}
+
+.brand-name {
+  color: #5b3b23;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.brand-desc {
+  margin-top: 8rpx;
+  color: #9a7655;
+  font-size: 24rpx;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+  margin-top: 44rpx;
+  color: #3f2f24;
+  font-size: 54rpx;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: 1rpx;
+}
+
+.hero-subtitle {
+  position: relative;
+  z-index: 1;
+  width: 92%;
+  margin-top: 18rpx;
+  color: #7b614d;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+.quick-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 28rpx;
+}
+
+.quick-tag {
+  margin: 0 14rpx 14rpx 0;
+  padding: 12rpx 18rpx;
+  border-radius: 999rpx;
+  color: #8d5a23;
+  font-size: 24rpx;
+  background: #fff1cf;
+}
+
+.form-card,
+.hot-card {
+  margin-top: 24rpx;
+  padding: 30rpx;
+}
+
+.section-title {
+  color: #4a3728;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.input-wrap {
+  margin-top: 20rpx;
+  padding: 6rpx;
+  border-radius: 28rpx;
+  background: #fff4dd;
+}
+
+.theme-input {
+  width: 100%;
+  height: 94rpx;
+  padding: 0 26rpx;
+  border: 3rpx solid #ffe0a9;
+  border-radius: 24rpx;
+  color: #4a3728;
+  font-size: 28rpx;
+  background: #fffaf2;
+}
+
+.theme-placeholder {
+  color: #b49a80;
+}
+
+.field-group {
+  margin-top: 30rpx;
+}
+
+.field-label {
+  margin-bottom: 16rpx;
+  color: #6b4a32;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.option-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.option-pill {
+  min-width: 154rpx;
+  height: 68rpx;
+  margin: 0 14rpx 14rpx 0;
+  padding: 0 22rpx;
+  border: 3rpx solid #f2dcc0;
+  border-radius: 999rpx;
+  color: #6d513b;
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 62rpx;
+  background: #fffaf4;
+}
+
+.style-pill {
+  min-width: 176rpx;
+}
+
+.option-pill-active {
+  border-color: #f6a84a;
+  color: #7a4310;
+  background: #fff0c7;
+  box-shadow: 0 8rpx 18rpx rgba(233, 151, 55, 0.18);
+}
+
+.generate-button {
+  width: 100%;
+  height: 96rpx;
+  margin-top: 22rpx;
+  border-radius: 999rpx;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 800;
+  line-height: 96rpx;
+  letter-spacing: 2rpx;
+  background: linear-gradient(135deg, #ff9c39 0%, #ffbd4d 100%);
+  box-shadow: 0 16rpx 26rpx rgba(222, 126, 37, 0.26);
+}
+
+.generate-button:active {
+  transform: scale(0.99);
+}
+
+.print-tip {
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center;
+  justify-content: center;
+  color: #8a6a51;
+  font-size: 24rpx;
+}
+
+.print-icon {
+  display: flex;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22rpx;
+  background: #78b96b;
+}
+
+.hot-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hot-subtitle {
+  margin-top: 8rpx;
+  color: #9a7655;
+  font-size: 24rpx;
+}
+
+.hot-badge {
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  color: #a05b17;
+  font-size: 22rpx;
+  background: #ffedc5;
+}
+
+.hot-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 22rpx;
+}
+
+.hot-chip {
+  margin: 0 14rpx 14rpx 0;
+  padding: 0 24rpx;
+  height: 64rpx;
+  border-radius: 999rpx;
+  color: #70533d;
+  font-size: 26rpx;
+  line-height: 64rpx;
+  background: #fff7e9;
+  border: 2rpx dashed #f0c891;
+}
+
+.hot-chip:active {
+  background: #ffedc5;
+}
