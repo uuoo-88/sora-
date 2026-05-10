@@ -2,18 +2,35 @@ Page({
   data: {
     theme: '',
     grades: ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级'],
-    selectedGrade: '一年级',
+    selectedGrade: '',
     styles: ['卡通风', '简约风', '手绘风'],
-    selectedStyle: '卡通风',
+    selectedStyle: '',
     hotThemes: [
-      '劳动节',
-      '安全教育',
-      '阅读小报',
-      '垃圾分类',
-      '端午节',
-      '防溺水',
-      '爱护眼睛',
-      '春天来了'
+      {
+        name: '劳动节',
+        coverClass: 'cover-labor',
+        figureClass: 'figure-kids'
+      },
+      {
+        name: '世界地球日',
+        coverClass: 'cover-earth',
+        figureClass: 'figure-earth'
+      },
+      {
+        name: '端午节',
+        coverClass: 'cover-dragon',
+        figureClass: 'figure-dragon'
+      },
+      {
+        name: '中国航天日',
+        coverClass: 'cover-space',
+        figureClass: 'figure-rocket'
+      },
+      {
+        name: '阅读小报',
+        coverClass: 'cover-reading',
+        figureClass: 'figure-reading'
+      }
     ]
   },
 
@@ -23,15 +40,19 @@ Page({
     })
   },
 
-  selectGrade(event) {
+  onGradeChange(event) {
+    const index = Number(event.detail.value)
+
     this.setData({
-      selectedGrade: event.currentTarget.dataset.grade
+      selectedGrade: this.data.grades[index]
     })
   },
 
-  selectStyle(event) {
+  onStyleChange(event) {
+    const index = Number(event.detail.value)
+
     this.setData({
-      selectedStyle: event.currentTarget.dataset.style
+      selectedStyle: this.data.styles[index]
     })
   },
 
@@ -54,7 +75,7 @@ Page({
 
     wx.showModal({
       title: '开始生成',
-      content: `正在为${this.data.selectedGrade}生成「${theme}」${this.data.selectedStyle}手抄报，完成后可保存并打印。`,
+      content: `正在为${this.data.selectedGrade || '孩子'}生成「${theme}」${this.data.selectedStyle || '卡通风'}手抄报，完成后可保存并打印。`,
       confirmText: '知道了',
       showCancel: false
     })

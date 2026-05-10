@@ -1,95 +1,153 @@
 <view class="home-page">
-  <view class="hero-card">
-    <view class="brand-row">
-      <view class="brand-mark">鹿</view>
+  <view class="hero">
+    <view class="brand">
+      <view class="deer-logo">
+        <text class="antler antler-left">⌞</text>
+        <text class="antler antler-right">⌟</text>
+        <text class="deer-face">🦌</text>
+      </view>
       <view>
-        <view class="brand-name">灵鹿AI手抄报</view>
-        <view class="brand-desc">给幼儿园和小学家长的打印小帮手</view>
+        <view class="brand-title">灵鹿手抄报</view>
+        <view class="brand-en">LINGLU HANDWRITING POSTER</view>
       </view>
     </view>
 
-    <view class="hero-title">10秒生成儿童手抄报</view>
-    <view class="hero-subtitle">输入主题、选择年级和风格，快速得到适合孩子的手抄报模板。</view>
+    <view class="hero-copy">
+      <view class="hero-title">10秒生成</view>
+      <view class="hero-title second-line">孩子<text>爱画</text>的手抄报</view>
+      <view class="hero-subtitle">家长轻松 · 孩子喜欢 · 老师放心</view>
+    </view>
 
-    <view class="quick-tags">
-      <text class="quick-tag">儿童感排版</text>
-      <text class="quick-tag">A4打印友好</text>
-      <text class="quick-tag">家长省心</text>
+    <view class="room-light"></view>
+    <view class="family-scene">
+      <view class="adult adult-dad">
+        <view class="hair"></view>
+        <view class="face">
+          <view class="eye left-eye"></view>
+          <view class="eye right-eye"></view>
+          <view class="smile"></view>
+        </view>
+        <view class="body"></view>
+        <view class="book"></view>
+      </view>
+      <view class="adult adult-mom">
+        <view class="hair bun"></view>
+        <view class="face">
+          <view class="eye left-eye"></view>
+          <view class="eye right-eye"></view>
+          <view class="smile"></view>
+        </view>
+        <view class="body"></view>
+      </view>
+      <view class="child">
+        <view class="child-hair"></view>
+        <view class="face">
+          <view class="eye left-eye"></view>
+          <view class="eye right-eye"></view>
+          <view class="smile"></view>
+        </view>
+        <view class="child-body"></view>
+      </view>
+      <view class="desk">
+        <view class="paper paper-main"></view>
+        <view class="pencil pencil-one"></view>
+        <view class="pencil pencil-two"></view>
+        <view class="pencil pencil-three"></view>
+      </view>
     </view>
   </view>
 
-  <view class="form-card">
-    <view class="section-title">想做什么主题？</view>
-    <view class="input-wrap">
+  <view class="panel">
+    <view class="search-box">
+      <text class="magic-icon">✦</text>
       <input
         class="theme-input"
         value="{{theme}}"
-        placeholder="请输入主题，例如：劳动节、安全教育、阅读小报"
+        placeholder="输入主题，例如：劳动节、阅读小报..."
         placeholder-class="theme-placeholder"
         confirm-type="done"
         bindinput="onThemeInput"
       />
+      <button class="generate-button" bindtap="handleGenerate">立即生成</button>
     </view>
 
-    <view class="field-group">
-      <view class="field-label">年级选择</view>
-      <view class="option-grid grade-grid">
-        <button
-          wx:for="{{grades}}"
-          wx:key="*this"
-          class="option-pill {{selectedGrade == item ? 'option-pill-active' : ''}}"
-          data-grade="{{item}}"
-          bindtap="selectGrade"
-        >
-          {{item}}
-        </button>
+    <view class="selector-row">
+      <picker class="selector-picker" mode="selector" range="{{grades}}" bindchange="onGradeChange">
+        <view class="selector-card">
+          <view class="selector-icon graduation-icon"></view>
+          <view class="selector-copy">
+            <view class="selector-title">选择年级</view>
+            <view class="selector-value {{selectedGrade ? 'selected' : ''}}">
+              <text wx:if="{{selectedGrade}}">{{selectedGrade}}</text>
+              <text wx:else>请选择年级</text>
+            </view>
+          </view>
+          <text class="chevron">⌄</text>
+        </view>
+      </picker>
+
+      <picker class="selector-picker" mode="selector" range="{{styles}}" bindchange="onStyleChange">
+        <view class="selector-card">
+          <view class="selector-icon palette-icon"></view>
+          <view class="selector-copy">
+            <view class="selector-title">选择风格</view>
+            <view class="selector-value {{selectedStyle ? 'selected' : ''}}">
+              <text wx:if="{{selectedStyle}}">{{selectedStyle}}</text>
+              <text wx:else>请选择风格</text>
+            </view>
+          </view>
+          <text class="chevron">⌄</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="hot-section">
+      <view class="hot-header">
+        <view class="hot-title">
+          <text class="fire-icon">🔥</text>
+          <text>热门主题</text>
+        </view>
+        <view class="more-link">更多主题 <text>›</text></view>
       </view>
-    </view>
 
-    <view class="field-group">
-      <view class="field-label">风格选择</view>
-      <view class="option-grid style-grid">
-        <button
-          wx:for="{{styles}}"
-          wx:key="*this"
-          class="option-pill style-pill {{selectedStyle == item ? 'option-pill-active' : ''}}"
-          data-style="{{item}}"
-          bindtap="selectStyle"
-        >
-          {{item}}
-        </button>
-      </view>
-    </view>
-
-    <button class="generate-button" bindtap="handleGenerate">
-      立即生成
-    </button>
-
-    <view class="print-tip">
-      <text class="print-icon">✓</text>
-      <text>生成后可保存图片，直接按 A4 打印。</text>
+      <scroll-view class="topic-scroll" scroll-x="true" show-scrollbar="false">
+        <view class="topic-track">
+          <button
+            wx:for="{{hotThemes}}"
+            wx:key="name"
+            class="topic-card"
+            data-theme="{{item.name}}"
+            bindtap="selectHotTheme"
+          >
+            <view class="topic-cover {{item.coverClass}}">
+              <view class="sun"></view>
+              <view class="cloud cloud-one"></view>
+              <view class="cloud cloud-two"></view>
+              <view class="cover-figure {{item.figureClass}}"></view>
+            </view>
+            <view class="topic-name">{{item.name}}</view>
+          </button>
+        </view>
+      </scroll-view>
     </view>
   </view>
 
-  <view class="hot-card">
-    <view class="hot-header">
-      <view>
-        <view class="section-title">热门主题推荐</view>
-        <view class="hot-subtitle">点一下就能填入主题</view>
-      </view>
-      <view class="hot-badge">家长常用</view>
+  <view class="tabbar">
+    <view class="tab-item active">
+      <view class="tab-icon home-icon"></view>
+      <view>首页</view>
     </view>
-
-    <view class="hot-list">
-      <button
-        wx:for="{{hotThemes}}"
-        wx:key="*this"
-        class="hot-chip"
-        data-theme="{{item}}"
-        bindtap="selectHotTheme"
-      >
-        {{item}}
-      </button>
+    <view class="tab-item">
+      <view class="tab-icon folder-icon"></view>
+      <view>作品</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-icon template-icon"></view>
+      <view>模板</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-icon smile-icon"></view>
+      <view>我的</view>
     </view>
   </view>
 </view>
